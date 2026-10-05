@@ -366,12 +366,12 @@ Other
 
 | Segment | Customers | % of Customers | Revenue | % of Revenue | Avg. Recency | Avg. Frequency | Avg. Monetary |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 🏆 **Champions** | 942 | 21.72% | 5.74M | 64.56% | 12.50 | 11.20 | 6,091.24 |
-| 💙 **Loyal Customers** | 460 | 10.60% | 910.76K | 10.25% | 38.45 | 5.29 | 1,979.91 |
-| ⚠️ **At-Risk Customers** | 661 | 15.24% | 823.91K | 9.27% | 150.64 | 3.41 | 1,246.46 |
-| 🌱 **Potential Loyalists** | 511 | 11.78% | 508.60K | 5.72% | 16.41 | 2.12 | 995.31 |
-| 🔘 **Other** | 690 | 15.91% | 382.18K | 4.30% | 45.34 | 1.49 | 553.89 |
-| 💤 **Lost Customers** | 1,074 | 24.76% | 523.80K | 5.89% | 216.68 | 1.10 | 487.71 |
+| **Champions** | 942 | 21.72% | 5.74M | 64.56% | 12.50 | 11.20 | 6,091.24 |
+| **Loyal Customers** | 460 | 10.60% | 910.76K | 10.25% | 38.45 | 5.29 | 1,979.91 |
+| **At-Risk Customers** | 661 | 15.24% | 823.91K | 9.27% | 150.64 | 3.41 | 1,246.46 |
+| **Potential Loyalists** | 511 | 11.78% | 508.60K | 5.72% | 16.41 | 2.12 | 995.31 |
+| **Other** | 690 | 15.91% | 382.18K | 4.30% | 45.34 | 1.49 | 553.89 |
+| **Lost Customers** | 1,074 | 24.76% | 523.80K | 5.89% | 216.68 | 1.10 | 487.71 |
 
 ### 🔍 Segment characteristics
 
@@ -598,14 +598,14 @@ These customers have relatively high historical monetary value despite being cla
 
 The recommendations are based directly on the customer segments identified through RFM analysis.
 
-| Segment | 🎬 Recommended Action |
+| Segment | Recommended Action |
 | --- | --- |
-| 🏆 **Champions** | Retain through loyalty rewards, personalized offers, VIP benefits, early access, and exclusive rewards. |
-| 💙 **Loyal Customers** | Increase purchase frequency through cross-selling, personalized recommendations, and loyalty incentives. |
-| ⚠️ **At-Risk Customers** | Launch targeted win-back campaigns based on previous purchases and customer value. |
-| 🌱 **Potential Loyalists** | Encourage repeat purchases using personalized recommendations and limited-time offers. |
-| 💤 **Lost Customers** | Use selective reactivation campaigns, prioritizing customers with higher historical monetary value. |
-| 🔘 **Other** | Use targeted engagement campaigns to identify customers with potential to move into higher-value segments. |
+| **Champions** | Retain through loyalty rewards, personalized offers, VIP benefits, early access, and exclusive rewards. |
+| **Loyal Customers** | Increase purchase frequency through cross-selling, personalized recommendations, and loyalty incentives. |
+| **At-Risk Customers** | Launch targeted win-back campaigns based on previous purchases and customer value. |
+| **Potential Loyalists** | Encourage repeat purchases using personalized recommendations and limited-time offers. |
+| **Lost Customers** | Use selective reactivation campaigns, prioritizing customers with higher historical monetary value. |
+| **Other** | Use targeted engagement campaigns to identify customers with potential to move into higher-value segments. |
 
 ### 🥇 Priority 1 — Protect high-value customers
 
@@ -744,13 +744,13 @@ Retail Customer Segmentation & RFM Analysis/
 ├── README.md
 │
 ├── Retail_Customer_Segmentation_RFM.pbix
-├── Retail_Customer_Segmentation_RFM(1).pdf
+├── Retail_Customer_Segmentation_RFM(.pdf
 │
-├── Customer_Segmentation_RFM_Analysis(1).ipynb
+├── Customer_Segmentation_RFM_Analysis(.ipynb
 ├── Customer_Segmentation_RFM_Analysis.docx
 ├── Insights & Recommendations.docx
 │
-├── Online Retail(1).xlsx
+├── Online Retail.xlsx
 │
 ├── transactions_clean.csv
 └── customer_rfm_final.csv
@@ -780,8 +780,8 @@ Retail Customer Segmentation & RFM Analysis/
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
-cd <YOUR_REPOSITORY_NAME>
+git clone (https://github.com/tusharrparihar/Retail-Customer-Segmentation-RFM-Analysis.git)
+cd <Retail-Customer-Segmentation-RFM-Analysis>
 ```
 
 <!-- TODO: Replace the repository URL with your actual GitHub repository URL. -->
@@ -806,7 +806,7 @@ pip install pandas numpy matplotlib seaborn openpyxl jupyter
 Open:
 
 ```text
-Customer_Segmentation_RFM_Analysis(1).ipynb
+Customer_Segmentation_RFM_Analysis(.ipynb
 ```
 
 using Jupyter Notebook or JupyterLab.
@@ -943,12 +943,12 @@ The combination of Python-based analysis and Power BI reporting turns the raw tr
 
 ## 🔗 Project Links
 
-- 🐙 **GitHub Repository:** <!-- TODO: Add GitHub repository link -->
-- 📓 **Jupyter Notebook:** [`Customer_Segmentation_RFM_Analysis(1).ipynb`](./Notebook/Customer_Segmentation_RFM_Analysis.ipynb)
-- 📄 **Dashboard PDF:** [`Retail_Customer_Segmentation_RFM(1).pdf`](./Visuals/Retail_Customer_Segmentation_RFM.pdf)
+- 🐙 **GitHub Repository:** ['GitHub repository link'](https://github.com/tusharrparihar/Retail-Customer-Segmentation-RFM-Analysis.git)
+- 📓 **Jupyter Notebook:** [`Customer_Segmentation_RFM_Analysis.ipynb`](./Notebook/Customer_Segmentation_RFM_Analysis.ipynb)
+- 📄 **Dashboard PDF:** [`Retail_Customer_Segmentation_RFM.pdf`](./Visuals/Retail_Customer_Segmentation_RFM.pdf)
 - 🧹 **Cleaned Dataset:** [`transactions_clean.csv`](./Dataset/Processed_Dataset/transactions_clean.csv)
 - 👥 **Customer RFM Dataset:** [`customer_rfm_final.csv`](./Dataset/Processed_Dataset/customer_rfm_final.csv)
-- 📗 **Raw Dataset:** [`Online Retail(1).xlsx`](./Dataset/Raw_Dataset/Online_Retai.xlsx)
+- 📗 **Raw Dataset:** [`Online Retail.xlsx`](./Dataset/Raw_Dataset/Online_Retai.xlsx)
 
 ---
 
