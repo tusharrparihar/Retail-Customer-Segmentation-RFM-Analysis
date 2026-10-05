@@ -1,0 +1,96 @@
+table customer_rfm_final
+	lineageTag: f6764a64-8ae7-4fb6-af0d-33e249ab49c7
+
+	column CustomerID
+		dataType: int64
+		formatString: 0
+		lineageTag: 0afbd30e-de40-4ea1-991c-b173720f1caf
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Recency
+		dataType: int64
+		formatString: 0
+		lineageTag: cd30b7b8-9549-4f0f-a046-c743dbc04c79
+		summarizeBy: none
+		sourceColumn: Recency
+
+		annotation SummarizationSetBy = Automatic
+
+	column Frequency
+		dataType: int64
+		formatString: 0
+		lineageTag: ea07eb9f-89a9-49d1-8d8f-3b287e3ffd75
+		summarizeBy: none
+		sourceColumn: Frequency
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monetary
+		dataType: double
+		lineageTag: 1cb60e9b-efe7-42f1-a7fe-9bf3774c2944
+		summarizeBy: none
+		sourceColumn: Monetary
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column R_Score
+		dataType: int64
+		formatString: 0
+		lineageTag: f882c855-74be-414d-b899-b63595325841
+		summarizeBy: none
+		sourceColumn: R_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column F_Score
+		dataType: int64
+		formatString: 0
+		lineageTag: 6bdbb466-97c1-4304-ac28-4adfb0ee88f8
+		summarizeBy: none
+		sourceColumn: F_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column M_Score
+		dataType: int64
+		formatString: 0
+		lineageTag: 677e90b1-e87a-42cb-a1e3-f25703549f88
+		summarizeBy: none
+		sourceColumn: M_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column RFM_Score
+		dataType: int64
+		formatString: 0
+		lineageTag: 800b5e80-26d3-4cf3-9204-4006bfa473ad
+		summarizeBy: none
+		sourceColumn: RFM_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		lineageTag: db190d3f-26f2-49a9-ab31-bef7b3781d34
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	partition customer_rfm_final = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("F:\Portfollio Projects\Customer Segmentation & RFM Analysis\Dataset\Processed Dataset\customer_rfm_final.csv"),[Delimiter=",", Columns=9, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"CustomerID", Int64.Type}, {"Recency", Int64.Type}, {"Frequency", Int64.Type}, {"Monetary", type number}, {"R_Score", Int64.Type}, {"F_Score", Int64.Type}, {"M_Score", Int64.Type}, {"RFM_Score", Int64.Type}, {"Segment", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

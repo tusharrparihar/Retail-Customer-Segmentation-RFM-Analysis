@@ -1,0 +1,62 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "01be60da503b085b67e7",
+  "position": {
+    "x": 69.845559845559848,
+    "y": 246.02316602316603,
+    "z": 1,
+    "height": 79.227799227799224,
+    "width": 137.6061776061776,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Customer ",
+                    "textStyle": {
+                      "fontFamily": "Times New Roman",
+                      "fontSize": "16pt",
+                      "color": "#cccccc"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Value ",
+                    "textStyle": {
+                      "fontFamily": "Times New Roman",
+                      "fontSize": "16pt",
+                      "color": "#cccccc"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Analysis",
+                    "textStyle": {
+                      "fontFamily": "Times New Roman",
+                      "fontSize": "16pt",
+                      "color": "#cccccc"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

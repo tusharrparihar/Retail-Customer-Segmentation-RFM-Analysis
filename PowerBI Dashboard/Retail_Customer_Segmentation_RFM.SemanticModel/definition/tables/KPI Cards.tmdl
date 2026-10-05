@@ -1,0 +1,116 @@
+table 'KPI Cards'
+	lineageTag: 220330d5-73dd-4941-9d63-4bbc6c1dc16e
+
+	measure 'Total Customers' = DISTINCTCOUNT(customer_rfm_final[CustomerID])
+		formatString: #,0
+		lineageTag: 57fc2665-4625-475b-856e-53eae4efcf78
+
+	measure 'Total Revenue' = sum(transactions_clean[Revenue])
+		lineageTag: 220e1e16-8663-4281-b470-45a1514f999e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Orders' = DISTINCTCOUNT(transactions_clean[InvoiceNo])
+		formatString: #,0
+		lineageTag: ea1f8667-e4a5-433d-ab1a-078294297751
+
+	measure 'Average Customer Revenue' = AVERAGE(customer_rfm_final[Monetary])
+		formatString: #,0.00
+		lineageTag: 6e192a41-684b-4295-81c4-4fb3624b90ad
+
+	measure 'Average Recency' = AVERAGE(customer_rfm_final[Recency])
+		lineageTag: 991eda5a-48db-4c74-8c14-c67240b8cdef
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Frequency' = AVERAGE(customer_rfm_final[Frequency])
+		lineageTag: ec6f7dfc-c3df-4411-b235-96c4ef38710b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Monetary' = AVERAGE(customer_rfm_final[Monetary])
+		lineageTag: 81c1bb50-7b22-42e7-83fa-33d02097cc89
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Champions = CALCULATE(DISTINCTCOUNT(customer_rfm_final[CustomerID]),customer_rfm_final[Segment] = "Champions")
+		formatString: 0
+		lineageTag: b8f407b1-66a7-45d0-aacf-c5899272f0b6
+
+	measure 'Loyal Customers' = CALCULATE(DISTINCTCOUNT(customer_rfm_final[CustomerID]),customer_rfm_final[Segment] = "Loyal Customers")
+		formatString: 0
+		lineageTag: 3d55d7e0-d243-4b5e-936e-5361a6a75178
+
+	measure 'Potential Loyalists' = CALCULATE(DISTINCTCOUNT(customer_rfm_final[CustomerID]),customer_rfm_final[Segment] = "Potential Loyalists")
+		formatString: 0
+		lineageTag: a6619af8-8a21-4034-85ef-fd261100ad0c
+
+	measure 'At-Risk Customers' = CALCULATE(DISTINCTCOUNT(customer_rfm_final[CustomerID]),customer_rfm_final[Segment] = "At-Risk Customers")
+		formatString: 0
+		lineageTag: 209f5252-0d21-4555-b42c-4a2cf81888bb
+
+	measure '% of Total Customers' =
+			
+			DIVIDE(
+			    [Total Customers],
+			    CALCULATE(
+			        [Total Customers],
+			        ALL(customer_rfm_final[Segment])
+			    )
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 05201661-969d-40c0-b3d9-e211bc208c21
+
+	measure '% of Total Revenue' =
+			
+			DIVIDE(
+			    [Total Revenue],
+			    CALCULATE(
+			        [Total Revenue],
+			        ALL(customer_rfm_final[Segment])
+			    )
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 4e14bfac-2944-44e5-aa7f-8f4a86c1eb72
+
+	measure 'Lost Customers' =
+			
+			CALCULATE(
+			    [Total Customers],
+			    customer_rfm_final[Segment] = "Lost Customers"
+			)
+		formatString: 0
+		lineageTag: b05a7645-e562-45df-bbc8-34707af49757
+
+	measure 'At-Risk Revenue' =
+			
+			CALCULATE(
+			    [Total Revenue],
+			    customer_rfm_final[Segment] = "At-Risk Customers"
+			)
+		lineageTag: 06a637f3-2e0d-4fb1-934e-76229b699668
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Lost Revenue' =
+			
+			CALCULATE(
+			    [Total Revenue],
+			    customer_rfm_final[Segment] = "Lost Customers"
+			)
+		lineageTag: 75c4acc4-0372-4091-bf69-250d23d2811b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'KPI Cards' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WSkksSVSKjQUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

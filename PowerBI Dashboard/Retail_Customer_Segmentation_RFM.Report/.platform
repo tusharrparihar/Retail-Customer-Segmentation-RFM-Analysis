@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Retail_Customer_Segmentation_RFM"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2ee43dd4-c00a-4b92-8e40-87b4185955c6"
+  }
+}

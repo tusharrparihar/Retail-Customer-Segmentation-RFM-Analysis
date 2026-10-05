@@ -1,0 +1,10 @@
+relationship e692b773-fa87-43df-a47c-1404a25a6e17
+	joinOnDateBehavior: datePartOnly
+	fromColumn: transactions_clean.InvoiceDate
+	toColumn: LocalDateTable_ac8724d6-350a-47b4-b935-96011ece9b3a.Date
+
+relationship AutoDetected_41e94add-05d3-489b-9e8b-4973ef1436aa
+	crossFilteringBehavior: bothDirections
+	fromColumn: transactions_clean.CustomerID
+	toColumn: customer_rfm_final.CustomerID
+

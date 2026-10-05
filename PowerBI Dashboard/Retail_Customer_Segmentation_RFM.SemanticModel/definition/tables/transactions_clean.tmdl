@@ -1,0 +1,100 @@
+table transactions_clean
+	lineageTag: 9bf11b4f-1c3e-4a8d-adf6-fbfd9da6aa9a
+
+	column InvoiceNo
+		dataType: int64
+		formatString: 0
+		lineageTag: 0ec9ccfb-731b-4d99-9ea8-245df7648da1
+		summarizeBy: sum
+		sourceColumn: InvoiceNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column StockCode
+		dataType: string
+		lineageTag: 78c2496f-6d8c-40d3-8e9f-b50b48ed9abe
+		summarizeBy: none
+		sourceColumn: StockCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 3e6029b5-2033-47ad-a4db-11db58f9cf60
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: d560f0ba-d29b-4c4f-9c9a-1965ecabbd20
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column InvoiceDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 83a77634-9c6a-4bb1-baa9-14485b5576b3
+		summarizeBy: none
+		sourceColumn: InvoiceDate
+
+		variation Variation
+			isDefault
+			relationship: e692b773-fa87-43df-a47c-1404a25a6e17
+			defaultHierarchy: LocalDateTable_ac8724d6-350a-47b4-b935-96011ece9b3a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitPrice
+		dataType: double
+		lineageTag: 082fb840-de5f-4edf-a845-dec7465ac9ab
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CustomerID
+		dataType: int64
+		formatString: 0
+		lineageTag: cf62e212-ebc9-4db8-8e66-55bc35487f19
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: eabc073c-1c8c-444a-827e-6a0067f1c7a4
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Revenue
+		dataType: double
+		lineageTag: e41278aa-b0a8-4787-a7c3-02d61b94fe32
+		summarizeBy: sum
+		sourceColumn: Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition transactions_clean = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("F:\Portfollio Projects\Customer Segmentation & RFM Analysis\Dataset\Processed Dataset\transactions_clean.csv"),[Delimiter=",", Columns=9, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"InvoiceNo", Int64.Type}, {"StockCode", type text}, {"Description", type text}, {"Quantity", Int64.Type}, {"InvoiceDate", type datetime}, {"UnitPrice", type number}, {"CustomerID", Int64.Type}, {"Country", type text}, {"Revenue", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

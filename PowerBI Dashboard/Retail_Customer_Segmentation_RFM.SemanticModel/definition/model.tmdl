@@ -1,0 +1,23 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["transactions_clean","customer_rfm_final","KPI Cards"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table transactions_clean
+ref table DateTableTemplate_adf466b5-577e-4ffa-9633-4788df97ba76
+ref table LocalDateTable_ac8724d6-350a-47b4-b935-96011ece9b3a
+ref table customer_rfm_final
+ref table 'KPI Cards'
+
+ref cultureInfo en-US
+

@@ -1,0 +1,61 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 118,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "transactions_clean",
+          "nodeLineageTag": "9bf11b4f-1c3e-4a8d-adf6-fbfd9da6aa9a",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 367,
+            "y": 107
+          },
+          "nodeIndex": "customer_rfm_final",
+          "nodeLineageTag": "f6764a64-8ae7-4fb6-af0d-33e249ab49c7",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 647,
+            "y": 0
+          },
+          "nodeIndex": "KPI Cards",
+          "nodeLineageTag": "220330d5-73dd-4941-9d63-4bbc6c1dc16e",
+          "size": {
+            "height": 184,
+            "width": 234
+          },
+          "zIndex": 1
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}
