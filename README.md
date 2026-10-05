@@ -39,43 +39,40 @@ The final analysis contains **4,338 customers, 18,532 orders, and 8.89M in total
 <!-- TODO: Add a Power BI dashboard screenshot here, for example: assets/dashboard_overview.png -->
 
 <p align="center">
-  <img src="assets/dashboard_overview.png" alt="Retail Customer Intelligence Power BI Dashboard" width="900">
-</p>
+<img width="979" height="552" alt="Retail Customer Intelligence" src="https://github.com/user-attachments/assets/5e3a467b-ceda-4a76-a18f-bac249932245" />
 
 ### 🖥️ Dashboard
 
 <!-- TODO: Add the Power BI Public/Service dashboard link here if available -->
 
-**🔗 Power BI Dashboard:** `TODO: Add dashboard link`
-
-**📄 Dashboard PDF:** [`Retail_Customer_Segmentation_RFM(1).pdf`](./Retail_Customer_Segmentation_RFM%281%29.pdf)
+**📄 Dashboard PDF:** [`Retail_Customer_Segmentation_RFM.pdf`](./Visuals/Retail_Customer_Segmentation_RFM.pdf)
 
 ---
 
 ## 🧭 Table of Contents
 
-- [📌 Project Overview](#-project-overview)
-- [💼 Business Problem](#-business-problem)
-- [🎯 Project Objectives](#-project-objectives)
-- [❓ Business Questions](#-business-questions)
-- [🗂 Dataset Overview](#-dataset-overview)
-- [🧱 Data Structure](#-data-structure)
-- [🧹 Data Cleaning & Preprocessing](#-data-cleaning--preprocessing)
-- [🔎 Exploratory Data Analysis](#-exploratory-data-analysis)
-- [📐 RFM Analysis](#-rfm-analysis)
-- [👥 Customer Segmentation](#-customer-segmentation)
-- [📈 Power BI Dashboard](#-power-bi-dashboard)
-- [💡 Key Insights](#-key-insights)
-- [🧠 Business Recommendations](#-business-recommendations)
-- [🔄 Project Workflow](#-project-workflow)
-- [🛠 Tools & Technologies](#-tools--technologies)
-- [📁 Project Files](#-project-files)
-- [▶ How to Reproduce the Analysis](#-how-to-reproduce-the-analysis)
-- [📦 Processed Outputs](#-processed-outputs)
-- [📊 Project Snapshot](#-project-snapshot)
-- [🏁 Conclusion](#-conclusion)
-- [🔗 Project Links](#-project-links)
-- [👤 Author](#-author)
+- [Project Overview](#-project-overview)
+- [Business Problem](#-business-problem)
+- [Project Objectives](#-project-objectives)
+- [Business Questions](#-business-questions)
+- [Dataset Overview](#-dataset-overview)
+- [Data Structure](#-data-structure)
+- [Data Cleaning & Preprocessing](#-data-cleaning--preprocessing)
+- [Exploratory Data Analysis](#-exploratory-data-analysis)
+- [RFM Analysis](#-rfm-analysis)
+- [Customer Segmentation](#-customer-segmentation)
+- [Power BI Dashboard](#-power-bi-dashboard)
+- [Key Insights](#-key-insights)
+- [Business Recommendations](#-business-recommendations)
+- [Project Workflow](#-project-workflow)
+- [Tools & Technologies](#-tools--technologies)
+- [Project Files](#-project-files)
+- [How to Reproduce the Analysis](#-how-to-reproduce-the-analysis)
+- [Processed Outputs](#-processed-outputs)
+- [Project Snapshot](#-project-snapshot)
+- [Conclusion](#-conclusion)
+- [Project Links](#-project-links)
+- [Author](#-author)
 
 ---
 
@@ -87,11 +84,11 @@ Without identifying high-value, loyal, emerging, inactive, and at-risk customers
 
 This project uses RFM analysis to turn transaction-level data into **customer-level metrics and behavioral segments** that can support:
 
-- 🔒 Customer retention
-- 🎁 Loyalty initiatives
-- 📣 Targeted marketing
-- 🔁 Repeat purchasing
-- 💵 Revenue-focused customer management
+- Customer retention
+- Loyalty initiatives
+- Targeted marketing
+- Repeat purchasing
+- Revenue-focused customer management
 
 <p align="right"><a href="#-retail-customer-segmentation--rfm-analysis">⬆️ Back to top</a></p>
 
@@ -101,13 +98,13 @@ This project uses RFM analysis to turn transaction-level data into **customer-le
 
 The project aims to:
 
-1. 🛒 Analyze customer transaction behavior.
-2. 📏 Quantify customer value using RFM analysis.
-3. 🧩 Segment customers based on their purchasing characteristics.
-4. 🏷️ Identify high-value, loyal, emerging, at-risk, and inactive customers.
-5. 💰 Understand revenue concentration across customer segments.
-6. 🔄 Identify opportunities for customer retention and repeat purchasing.
-7. 🎯 Support differentiated customer engagement and marketing strategies.
+1. Analyze customer transaction behavior.
+2. Quantify customer value using RFM analysis.
+3. Segment customers based on their purchasing characteristics.
+4. Identify high-value, loyal, emerging, at-risk, and inactive customers.
+5. Understand revenue concentration across customer segments.
+6. Identify opportunities for customer retention and repeat purchasing.
+7. Support differentiated customer engagement and marketing strategies.
 
 ---
 
@@ -115,15 +112,15 @@ The project aims to:
 
 The analysis focuses on questions such as:
 
-- 💎 Which customers generate the highest monetary value?
-- ⏱️ Which customers purchase most recently and most frequently?
-- 📊 How concentrated is revenue among high-value customers?
-- 📐 What are the Recency, Frequency, and Monetary characteristics of the customer base?
-- 🧮 How can customers be scored and compared using RFM?
-- 🏆 Which customer segments contribute the most revenue?
-- ⚠️ Which customers or segments show characteristics associated with inactivity or retention risk?
-- 🌱 Which segments represent opportunities for strengthening loyalty and repeat purchasing?
-- 🎯 How can customer segments support differentiated retention and engagement strategies?
+- Which customers generate the highest monetary value?
+- Which customers purchase most recently and most frequently?
+- How concentrated is revenue among high-value customers?
+- What are the Recency, Frequency, and Monetary characteristics of the customer base?
+- How can customers be scored and compared using RFM?
+- Which customer segments contribute the most revenue?
+- Which customers or segments show characteristics associated with inactivity or retention risk?
+- Which segments represent opportunities for strengthening loyalty and repeat purchasing?
+- How can customer segments support differentiated retention and engagement strategies?
 
 <p align="right"><a href="#-retail-customer-segmentation--rfm-analysis">⬆️ Back to top</a></p>
 
@@ -137,12 +134,12 @@ The original dataset contains:
 
 | 📋 Attribute | Value |
 |---|---:|
-| 🧾 Transaction records | 541,909 |
-| 🧱 Columns | 8 |
-| 📅 Data period | 1 Dec 2010 – 9 Dec 2011 |
-| ❌ Missing CustomerID values | 135,080 |
-| ❌ Missing Description values | 1,454 |
-| 👯 Duplicate records | 5,268 |
+| Transaction records | 541,909 |
+| Columns | 8 |
+| Data period | 1 Dec 2010 – 9 Dec 2011 |
+| Missing CustomerID values | 135,080 |
+| Missing Description values | 1,454 |
+| Duplicate records | 5,268 |
 
 The transaction-level data contains customer, product, transaction, pricing, geographic, and timestamp information.
 
@@ -154,16 +151,16 @@ The transaction-level data contains customer, product, transaction, pricing, geo
 
 The original dataset contains the following fields:
 
-| 🔑 Column | Description |
+| Column | Description |
 |---|---|
-| `InvoiceNo` | 🧾 Transaction / invoice ID |
-| `StockCode` | 🏷️ Product ID |
-| `Description` | 📦 Product name |
-| `Quantity` | 🔢 Number of items purchased |
-| `InvoiceDate` | 📅 Purchase date and time |
-| `UnitPrice` | 💲 Price per item |
-| `CustomerID` | 👤 Unique customer ID |
-| `Country` | 🌍 Customer location |
+| `InvoiceNo` | Transaction / invoice ID |
+| `StockCode` | Product ID |
+| `Description` | Product name |
+| `Quantity` | Number of items purchased |
+| `InvoiceDate` | Purchase date and time |
+| `UnitPrice` | Price per item |
+| `CustomerID` | Unique customer ID |
+| `Country` | Customer location |
 
 A `Revenue` column was created during preprocessing:
 
@@ -228,15 +225,15 @@ EDA was performed in Python to understand overall sales, customer behavior, prod
 
 ### 📌 Overall KPIs
 
-| 📊 Metric | Value |
+| Metric | Value |
 | --- | --- |
-| 💰 Total Revenue | 8.89M |
-| 👥 Total Customers | 4,338 |
-| 🧾 Total Orders | 18,532 |
-| 📦 Total Products | 3,665 |
-| 🛒 Total Units Sold | 5,152,002 |
-| 💳 Average Order Value | 479.56 |
-| 👤 Average Customer Revenue | 2,048.69 |
+| Total Revenue | 8.89M |
+| Total Customers | 4,338 |
+| Total Orders | 18,532 |
+| Total Products | 3,665 |
+| Total Units Sold | 5,152,002 |
+| Average Order Value | 479.56 |
+| Average Customer Revenue | 2,048.69 |
 
 The RFM dashboard reports the average customer revenue as **2,049**.
 
@@ -244,12 +241,12 @@ The RFM dashboard reports the average customer revenue as **2,049**.
 
 The notebook analyzes:
 
-- 💎 Top customers by revenue
-- 📈 Distribution of customer revenue
-- 📊 Cumulative revenue concentration
-- 🔁 Top customers by purchasing frequency
-- 🕒 Most recent customers
-- 💸 Highest-spending customers
+- Top customers by revenue
+- Distribution of customer revenue
+- Cumulative revenue concentration
+- Top customers by purchasing frequency
+- Most recent customers
+- Highest-spending customers
 
 The top five customers by revenue were:
 
@@ -281,10 +278,10 @@ The **United Kingdom** is the largest revenue-generating market in the analyzed 
 
 The notebook also examines:
 
-- 💵 Monthly revenue
-- 🧾 Monthly order volume
-- 👥 Monthly active customers
-- 💳 Monthly average order value
+- Monthly revenue
+- Monthly order volume
+- Monthly active customers
+- Monthly average order value
 
 These were used to understand changes in sales activity over the transaction period.
 
@@ -947,12 +944,11 @@ The combination of Python-based analysis and Power BI reporting turns the raw tr
 ## 🔗 Project Links
 
 - 🐙 **GitHub Repository:** <!-- TODO: Add GitHub repository link -->
-- 📈 **Power BI Dashboard:** <!-- TODO: Add Power BI Public link -->
-- 📓 **Jupyter Notebook:** [`Customer_Segmentation_RFM_Analysis(1).ipynb`](./Customer_Segmentation_RFM_Analysis%281%29.ipynb)
-- 📄 **Dashboard PDF:** [`Retail_Customer_Segmentation_RFM(1).pdf`](./Retail_Customer_Segmentation_RFM%281%29.pdf)
-- 🧹 **Cleaned Dataset:** [`transactions_clean.csv`](./transactions_clean.csv)
-- 👥 **Customer RFM Dataset:** [`customer_rfm_final.csv`](./customer_rfm_final.csv)
-- 📗 **Raw Dataset:** [`Online Retail(1).xlsx`](./Online%20Retail%281%29.xlsx)
+- 📓 **Jupyter Notebook:** [`Customer_Segmentation_RFM_Analysis(1).ipynb`](./Notebook/Customer_Segmentation_RFM_Analysis.ipynb)
+- 📄 **Dashboard PDF:** [`Retail_Customer_Segmentation_RFM(1).pdf`](./Visuals/Retail_Customer_Segmentation_RFM.pdf)
+- 🧹 **Cleaned Dataset:** [`transactions_clean.csv`](./Dataset/Processed_Dataset/transactions_clean.csv)
+- 👥 **Customer RFM Dataset:** [`customer_rfm_final.csv`](./Dataset/Processed_Dataset/customer_rfm_final.csv)
+- 📗 **Raw Dataset:** [`Online Retail(1).xlsx`](./Dataset/Raw_Dataset/Online_Retai.xlsx)
 
 ---
 
@@ -962,10 +958,10 @@ The combination of Python-based analysis and Power BI reporting turns the raw tr
 
 <!-- TODO: Add your LinkedIn profile link -->
 
-- 💼 LinkedIn: TODO: Add LinkedIn URL
+- 💼 LinkedIn: https://www.linkedin.com/in/tusharrparihar
 
 <!-- TODO: Add your email address or portfolio website if you want recruiters to contact you directly. -->
 
-- 🌐 Portfolio / Contact: TODO: Add portfolio or contact link
+- 🌐 Portfolio / Contact: tusharrparihar@gmail.com
 
 <p align="right"><a href="#-retail-customer-segmentation--rfm-analysis">⬆️ Back to top</a></p>
